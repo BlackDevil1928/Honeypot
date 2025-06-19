@@ -1,0 +1,71 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 218 25% 8%;
+    --foreground: 210 40% 98%;
+    --card: 218 25% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 218 25% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 218 25% 8%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 218 25% 8%;
+    --muted: 218 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 218 25% 18%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 218 25% 20%;
+    --input: 218 25% 20%;
+    --ring: 195 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cyber-bg text-foreground font-mono;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+  }
+}
+
+@layer components {
+  .terminal-text {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .neon-border {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+                linear-gradient(45deg, #00d4ff, #00ff88) border-box;
+  }
+  
+  .scan-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    animation: scan-line 3s linear infinite;
+  }
+}
