@@ -26,7 +26,7 @@ This web-based honeypot mimics a potentially vulnerable login or admin page to l
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack Used:
 
 | Frontend  | Description                |
 |-----------|----------------------------|
